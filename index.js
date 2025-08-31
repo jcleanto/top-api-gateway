@@ -7,7 +7,7 @@ var logger = require('morgan');
 app.use(logger('dev'));
  
 function selectProxyHost(req) {
-  if (req.path.startsWith('/users'))
+  if (req.path.startsWith('/users') || req.path.startsWith('/auth'))
     return 'http://localhost:3000/';
   else if (req.path.startsWith('/finances'))
     return 'http://localhost:3001/';
