@@ -8,9 +8,9 @@ app.use(logger('dev'));
  
 function selectProxyHost(req) {
   if (req.path.startsWith('/users') || req.path.startsWith('/auth'))
-    return 'http://localhost:3000/';
+    return 'http://top-users:3000/';
   else if (req.path.startsWith('/finances'))
-    return 'http://localhost:3001/';
+    return 'http://top-finance:3001/';
 }
  
 app.use((req, res, next) => {
